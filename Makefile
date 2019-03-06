@@ -162,6 +162,14 @@ clean:
 	$(RM) -f -r *~ *.o common.tex cweave.tex cweave.c ctangle.tex \
 	  *.log *.dvi *.toc *.idx *.scn *.pdf core cweave ctangle
 
+uninstall:
+	$(RM) $(DESTDIR)$(DESTPREF)weave
+	$(RM) $(DESTDIR)$(DESTPREF)tangle
+	$(RM) $(MANDIR)/cweb.$(MANEXT)
+	$(RM) $(MACROSDIR)/cwebmac.tex
+	- $(RM) $(EMACSDIR)/cweb.el
+	$(RM) $(CWEBINPUTS)/c++lib.w
+
 install: all
 	- mkdir $(DESTDIR)
 	$(CP) cweave $(DESTDIR)$(DESTPREF)weave
