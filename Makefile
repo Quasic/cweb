@@ -49,11 +49,11 @@ TCHANGES=
 # Set WCHANGES to cweav-foo.ch if you need changes to cweave.w
 WCHANGES=
 
-# We keep debugging info around, for fun, but most users don't need it
-CFLAGS = -g -Wno-pointer-sign
-#CFLAGS = -O -Wno-pointer-sign
-LINKFLAGS = -g
-#LINKFLAGS = -s # for smaller (stripped) executables on many UNIX systems
+# debugging info is fun, but most users don't need it
+#CFLAGS = -g -Wno-pointer-sign
+CFLAGS = -O -Wno-pointer-sign
+#LINKFLAGS = -g
+LINKFLAGS = -s # for smaller (stripped) executables on many UNIX systems
 
 # What C compiler are you using?
 CC = cc
@@ -175,8 +175,8 @@ install: all
 	$(CP) cwebmac.tex $(MACROSDIR)
 	chmod 644 $(MACROSDIR)/cwebmac.tex
 	- mkdir $(EMACSDIR)
-	$(CP) cweb.el $(EMACSDIR)
-	chmod 644 $(EMACSDIR)/cweb.el
+	- $(CP) cweb.el $(EMACSDIR)
+	- chmod 644 $(EMACSDIR)/cweb.el
 	- mkdir $(CWEBINPUTS)
 	$(CP) c++lib.w $(CWEBINPUTS)
 	chmod 644 $(CWEBINPUTS)/c++lib.w
