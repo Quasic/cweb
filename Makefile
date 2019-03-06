@@ -51,7 +51,7 @@ WCHANGES=
 
 # We keep debugging info around, for fun, but most users don't need it
 CFLAGS = -g -Wno-pointer-sign
-#CFLAGS = -O
+#CFLAGS = -O -Wno-pointer-sign
 LINKFLAGS = -g
 #LINKFLAGS = -s # for smaller (stripped) executables on many UNIX systems
 
